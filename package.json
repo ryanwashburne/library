@@ -5,7 +5,7 @@
   "module": "lib/index.esm.js",
   "author": "Ryan Washburne <ryan.washburne@gmail.com>",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ryanwashburne"
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "lib"
