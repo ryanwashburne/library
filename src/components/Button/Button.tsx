@@ -6,6 +6,8 @@ import { Sizes } from 'src/utils/types'
 
 export interface ButtonProps {
   children: React.ReactNode
+  type?: 'button' | 'submit' | 'reset'
+  role?: React.AriaRole
   size?: Sizes
   variant?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'link'
   state?: 'info' | 'success' | 'warning' | 'error'
@@ -20,6 +22,8 @@ export interface ButtonProps {
 
 export const Button = ({
   children,
+  type = 'button',
+  role,
   size,
   variant = 'neutral',
   state,
@@ -33,7 +37,8 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   return (
     <button
-      type="button"
+      type={type}
+      role={role}
       onClick={onClick}
       className={classnames(
         'btn',
