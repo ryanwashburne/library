@@ -1,5 +1,11 @@
 # @ryanwashburne/library
 
+## 1.1.0
+
+### Minor Changes
+
+- 59de500: Added Avatar and Card
+
 ## 1.0.2
 
 ### Patch Changes
