@@ -1,5 +1,11 @@
 # @ryanwashburne/library
 
+## 1.1.1
+
+### Patch Changes
+
+- 36744eb: added button props
+
 ## 1.1.0
 
 ### Minor Changes
