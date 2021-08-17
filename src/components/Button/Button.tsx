@@ -1,33 +1,53 @@
-// src/components/Button.tsx
+// src/components/Button/Button.tsx
 import * as React from 'react'
+import classnames from 'classnames'
+
+import { Sizes } from 'src/utils/types'
 
 export interface ButtonProps {
-  children: React.ReactNode;
-  primary?: boolean;
-  onClick?: () => void;
-  backgroundColor?: string;
-  color?: string;
+  children: React.ReactNode
+  size?: Sizes
+  variant?: 'neutral' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'link'
+  state?: 'info' | 'success' | 'warning' | 'error'
+  shape?: 'square' | 'circle'
+  disabled?: boolean
+  loading?: boolean
+  outlined?: boolean
+  onClick?: () => void
+  fullWidth?: boolean
+  className?: string
 }
 
 export const Button = ({
   children,
-  primary = false,
+  size,
+  variant = 'neutral',
+  state,
+  shape,
+  disabled,
+  loading,
+  outlined,
   onClick,
-  backgroundColor = '#D1D5DB',
-  color = '#1F2937',
+  fullWidth,
+  className,
 }: ButtonProps): JSX.Element => {
-  const buttonStyles = {
-    fontWeight: 700,
-    padding: '10px 20px',
-    border: 0,
-    cursor: 'pointer',
-    display: 'inline-block',
-    lineHeight: 1,
-    backgroundColor: primary ? '#2563EB' : backgroundColor,
-    color: primary ? '#F3F4F6' : color,
-  }
   return (
-    <button type="button" onClick={onClick} style={buttonStyles}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={classnames(
+        'btn',
+        size && `btn-${size}`,
+        variant && `btn-${variant}`,
+        state && `btn-${state}`,
+        shape && `btn-${shape}`,
+        outlined && `btn-outline`,
+        fullWidth && `btn-block`,
+        loading && `loading`,
+        className,
+      )}
+      disabled={disabled}
+    >
       {children}
     </button>
   )
