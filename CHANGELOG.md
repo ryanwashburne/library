@@ -1,5 +1,11 @@
 # @ryanwashburne/library
 
+## 1.1.2
+
+### Patch Changes
+
+- 09b3e84: added comments
+
 ## 1.1.1
 
 ### Patch Changes
